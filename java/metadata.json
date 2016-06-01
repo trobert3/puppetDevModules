@@ -1,0 +1,15 @@
+{
+  "name": "vodafone-java",
+  "version": "1.0.0",
+  "author": "me",
+  "summary": "perfect",
+  "license": "none",
+  "source": "git@github.com:trobert3/puppetDevModules.git",
+  "project_page": "asdasd",
+  "issues_url": "test",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
