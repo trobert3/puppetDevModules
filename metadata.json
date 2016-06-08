@@ -1,0 +1,15 @@
+{
+  "name": "vodafone-vodafone_java",
+  "version": "1.0.0",
+  "author": "Mircea Pop",
+  "summary": "Module for deployment and confiduration of Java SDK",
+  "license": "Vodafone",
+  "source": "https://svn.sp.vodafone.com/git/sdp_puppet_modules.git",
+  "project_page": "https://confluence.sp.vodafone.com/display/ESOR/VODAFONE_JAVA",
+  "issues_url": "https://jira.sp.vodafone.com/browse/ETSOSD",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
