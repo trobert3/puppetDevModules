@@ -1,15 +1,55 @@
 {
-  "name": "vodafone-vodafone_java",
-  "version": "1.0.0",
-  "author": "Mircea Pop",
-  "summary": "Module for deployment and confiduration of Java SDK",
-  "license": "Vodafone",
-  "source": "https://svn.sp.vodafone.com/git/sdp_puppet_modules.git",
-  "project_page": "https://confluence.sp.vodafone.com/display/ESOR/VODAFONE_JAVA",
-  "issues_url": "https://jira.sp.vodafone.com/browse/ETSOSD",
-  "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
-  ],
-  "data_provider": null
+    "name": "vodafone-vodafone_java",
+    "version": "1.0.0",
+    "author": "SDP",
+    "summary": "Module for deployment and configuration of Java",
+    "license": "Vodafone",
+    "source": "https://svn.sp.vodafone.com/git/sdp_puppet_modules.git",
+    "project_page": "https://confluence.sp.vodafone.com/display/ESOR/VODAFONE_JAVA",
+    "issues_url": "https://jira.sp.vodafone.com/browse/ETSOSD",
+    "dependencies": [
+      {
+          "name": "puppetlabs-stdlib",
+          "version_requirement": ">= 4.12.0"
+      },
+      {
+          "name": "puppet-archive",
+          "version_requirement": ">= 0.5.1"
+      }
+  
+    ],
+    "data_provider": "hiera",
+    "operatingsystem_support": [
+        {
+            "operatingsystem": "RedHat",
+            "operatingsystemrelease": [
+                "6.0",
+                "7.0"
+            ]
+        },
+        {
+             "operatingsystem": "CentOS",
+             "operatingsystemrelease": [
+                 "6",
+                 "7"
+             ]
+        },
+        {
+             "operatingsystem": "Solaris",
+             "operatingsystemrelease": [
+                 "10",
+                 "11"
+             ]
+        }
+    ],
+    "requirements": [
+        {
+            "name": "pe",
+            "version_requirement": ">= 4.5.0"
+        },
+        {
+            "name": "puppet",
+            "version_requirement": ">= 4.5.0 < 5.0.0"
+        }
+    ]
 }
-

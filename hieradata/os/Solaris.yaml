@@ -1,0 +1,5 @@
+
+---
+vodafone_java::instalationLocation: '/opt/SP/apps/'
+vodafone_java::functionalUser: 'jboss'
+vodafone_java::version: 7

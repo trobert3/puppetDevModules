@@ -42,7 +42,15 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class vodafone_java {
-
-
+class vodafone_java (
+    $instalationLocation,
+    $functionalUser,
+    $version
+    ) 
+{
+    class { 'vodafone_java::jdk':
+        instalationLocation => $instalationLocation,
+        functionalUser => $functionalUser,
+        version => $version,
+    }
 }
