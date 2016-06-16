@@ -10,19 +10,28 @@ class vodafone_java::jdk (
     validate_string($functionalUser)
     validate_numeric($version)
 
-    #TODO: Add architecture
+    #TODO: Add option to deploy specific tar. This model works because we know
+    #      what we have ready to deploy and we know where we want it but it
+    #      lacks flexibility
 
     $osType = 'linux'
     if $::osfamily=='Solaris' {
         $osType = 'solaris'
     }
 
-    $jdkPackage = "jdk-7u55-${osType}-i586.tar.gz"
-    if $version == 6 {
-        $jdkPackage = ''
-    } elsif $version == 8 {
-        $jdkPackage = ''
+    $arch = 'x64'
+    if $::architecture=='i86pc' {
+        $arch = 'i386'
     }
+
+    $versionPrefix = 'jdk1.7.0_67'
+    if $version == 6 {
+        $versionPrefix = 'jdk1.6.0_41'
+    } elsif $version == 8 {
+        $versionPrefix = 'jdk1.8.0_40'
+    }
+
+    $jdkPackage = "${versionPrefix}-${osType}-${arch}.tar.gz"
 
     $gz_path = "/tmp/${jdkPackage}"
 
