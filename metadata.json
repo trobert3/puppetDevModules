@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "author": "SDP",
     "summary": "Module for deployment and configuration of Java",
-    "license": "Vodafone",
+    "license": "Apache-2.0",
     "source": "https://svn.sp.vodafone.com/git/sdp_puppet_modules.git",
     "project_page": "https://confluence.sp.vodafone.com/display/ESOR/VODAFONE_JAVA",
     "issues_url": "https://jira.sp.vodafone.com/browse/ETSOSD",

@@ -2,5 +2,9 @@ AllCops:
   Include:
     - '**/Rakefile'
     - '**/*.rb'
+    - 'spec/fixtures/sdp_*/**/*'
+    - 'spec/fixtures/vodafone_*/**/*'
+    - 'spec/fixtures/cds_*/**/*'
   Exclude:
     - 'spec/fixtures/**/*'
+

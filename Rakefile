@@ -8,6 +8,7 @@ if RUBY_VERSION >= '1.9'
 end
 
 PuppetLint.configuration.send('disable_80chars')
+PuppetLint.configuration.send('disable_variable_scope')
 PuppetLint.configuration.relative = true
 PuppetLint.configuration.ignore_paths = ['spec/**/*.pp', 'pkg/**/*.pp']
 
@@ -26,7 +27,9 @@ end
 
 desc 'Run metadata_lint, lint, validate, and spec tests.'
 task :test do
-  [:metadata_lint, :lint, :validate, :spec].each do |test|
+  [:metadata_lint, :lint, :validate, :spec_standalone, :rubocop].each do |test|
     Rake::Task[test].invoke
   end
 end
+
+task default: %w(test validate)
