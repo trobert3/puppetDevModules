@@ -1,0 +1,16 @@
+   <bean name="<%= @bean_name %>" class="<%= @bean_class %>" >
+        <property name="logSource" value="<%= @logSource %>" />
+        <property name="fileToTail" value="<%= @fileToTail %>" />
+        <property name="concatenationMode"><value>SIMPLE</value></property>
+        <property name="fileRegexParserPattern" value="<%= @fileRegexParserPattern %>" />
+        <property name="fileRegexParserHostGroup" value="<%= @fileRegexParserHostGroup %>" />
+        <property name="fileRegexParserDateGroup" value="<%= @fileRegexParserDateGroup %>" />
+        <property name="fileRegexParserMessageGroup" value="<%= @fileRegexParserMessageGroup %>" />
+        <property name="fileRegexParserSeverityGroup" value="<%= @fileRegexParserSeverityGroup %>" />
+        <property name="fileRegexParserTagGroup" value="<%= @fileRegexParserTagGroup %>" />
+        <property name="fileRegexParserFacilityGroup" value="<%= @fileRegexParserFacilityGroup %>" />
+        <property name="fileDateParserParseTimezone" value="<%= @fileDateParserParseTimezone %>" />
+        <property name="fileDateParserOutputTimezone" value="<%= @fileDateParserOutputTimezone %>" />
+        <property name="fileDateParserParseFormat" value="<%= @fileDateParserParseFormat %>" />
+    </bean>
+

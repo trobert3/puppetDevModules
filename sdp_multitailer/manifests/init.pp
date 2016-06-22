@@ -44,5 +44,12 @@
 #
 class sdp_multitailer {
 
+  class { 'sdp_multitailer::deploy':
+    #params
+  }
+
+  class { 'sdp_multitailer::configure':
+    #params
+  }
 
 }

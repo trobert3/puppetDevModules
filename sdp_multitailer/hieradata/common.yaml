@@ -1,0 +1,19 @@
+---
+# Main configuration
+sdp_multitailer::rabbitmq_host : "RTIDEV-5292164895.eu-de1.plex.vodafone.com"
+sdp_multitailer::rabbitmq_port : "8089"
+sdp_multitailer::rabbitmq_user : "vfexternal"
+sdp_multitailer::rabbitmq_password : "vfexternal"
+sdp_multitailer::rabbitmq_publisherConfirms : false
+sdp_multitailer::routing_key_expression : "(headers.containsKey('log_SOURCE') ? headers.log_SOURCE : '--')"
+# Bean default values
+sdp_multitailer::fileRegexParserPattern : "(.*)",
+sdp_multitailer::fileRegexParserHostGroup : "0",
+sdp_multitailer::fileRegexParserDateGroup : "0",
+sdp_multitailer::fileRegexParserMessageGroup : "1",
+sdp_multitailer::fileRegexParserSeverityGroup : "0",
+sdp_multitailer::fileRegexParserTagGroup : "0",
+sdp_multitailer::fileRegexParserFacilityGroup : "0",
+sdp_multitailer::fileDateParserParseTimezone : "UTC",
+sdp_multitailer::fileDateParserOutputTimezone : "UTC",
+sdp_multitailer::fileDateParserParseFormat : "yyyy-MM-dd'T'HH:mm:ss.SSSZ"

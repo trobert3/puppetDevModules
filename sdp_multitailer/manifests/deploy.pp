@@ -1,23 +1,11 @@
-class deploy_multitailer ($rabbitmq_host,
-                          $rabbitmq_port,
-                          $rabbitmq_user,
-                          $rabbitmq_password,
-                          $rabbitmq_publisherConfirms,
-                          $routing_key_expression,
-                          $functional_user,
-                          $multitailer_package,
-                          $instalation_location
-                          ) {
-
-    # $rabbitmq_host = "RTIDEV-5292164895.eu-de1.plex.vodafone.com"
-    # $rabbitmq_port = "8089"
-    # $rabbitmq_user = "vfexternal"
-    # $rabbitmq_password = "vfexternal"
-    # $rabbitmq_publisherConfirms = false
-    # $routing_key_expression = "(headers.containsKey('log_SOURCE') ? headers.log_SOURCE : '--')"
+class sdp_multitailer::deploy ($functional_user,
+                               $multitailer_package,
+                               $instalation_location
+                              ) {
 
     include vodafone_java
 
+    # should we create these here?
 	file { ['/var/SP/log/', '/var/SP/run/', '/var/SP/log/multitailer/', '/var/SP/run/multitailer/']:
 		ensure	=> "directory",
 		owner => "$functional_user",
@@ -44,14 +32,14 @@ class deploy_multitailer ($rabbitmq_host,
 
 	file { '${instalation_location}/multitailerService.sh' :
 		require	=> File['/opt/SP/apps/multitailer/'],
-		source  => "puppet:///testing/multitailerService.sh",
+		source  => "puppet:///modules/sdp_multitailer/multitailerService.sh",
 		ensure  => "present",
 		owner => "$functional_user",
 		group => "$functional_user",
 		mode => 0755,
 	}
 
-    #TODO: get from module files
+    #TODO: get from module templates
 	concat { '/opt/SP/apps/multitailer/conf/multitailer-config.xml' :
 		require	=> File['/opt/SP/apps/multitailer/'],
 		ensure  => "present",
